@@ -1,0 +1,48 @@
+package ej;
+
+class Red extends Jugador {
+    protected String contraseña;
+
+    public Red(String contraseña) {
+        super(contraseña);
+        this.contraseña = contraseña;
+    }
+
+    public String identificacion() {
+        return super.identificacion();
+    }
+}
+
+class Jugador {
+    protected String nombre;
+    public Jugador(String nombre) {
+        this.nombre = nombre;
+    }
+    public String nombre() {
+        return this.nombre;
+    }
+    public String identificacion() {
+        return this.nombre();
+    }
+    
+}
+
+
+public class Herencia {
+    public static void  main (String args[]) {
+        Jugador a = new Jugador("Emilio");
+        Red b = new Red("3052454545");
+        
+        Jugador[] arregloJugador = new Jugador[2];
+        arregloJugador[0] = a;
+        arregloJugador[1] = b;
+        identificarPolimorfico(arregloJugador);
+    }
+
+    public static void identificarPolimorfico(Jugador [] arregloJugador) {
+    	    System.out.println("Nombre Jugador: " + arregloJugador[0].identificacion());
+            System.out.println("Contraseña Jugador: " + arregloJugador[1].identificacion());
+        }
+
+
+}
